@@ -199,6 +199,42 @@
             color: #555;
         }
 
+
+        /* Wedding, Meeting and Weddings Section */
+        .events {
+            max-width: 1200px;
+            margin: 5rem auto;
+            padding: 0 2rem;
+            text-align: center;
+        }
+
+        .events h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            color: #8b4513;
+            margin-bottom: 2rem;
+        }
+
+        .events p {
+            max-width: 800px;
+            margin: 0 auto 2rem;
+            font-size: 1.1rem;
+            color: #555;
+        }
+
+        .events-image {
+            max-width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .events-image:hover {
+            transform: scale(1.05);
+        }
+
         /* Gallery Section */
         .gallery {
             max-width: 1200px;
@@ -388,6 +424,9 @@
             .map-container {
                 padding-bottom: 75%; /* Adjust aspect ratio for smaller screens */
             }
+            .events-image {
+                height: 250px;
+            }
         }
     </style>
 </head>
@@ -437,6 +476,11 @@
                 <img src="images/PHOTO-2025-07-23-12-18-48 3.jpg" alt="Family Suite">
                 <h3>Family Suite</h3>
                 <p>Ideal for families, offering ample space and a warm, welcoming atmosphere.</p>
+            </div>
+            <div class="room-card">
+                <img src="images/PHOTO-2025-07-23-12-18-48 2.jpg" alt="Delux Triple Suite">
+                <h3>Delux Triple Suite</h3>
+                <p>Ideal for three occupancy, offering ample space and a warm, welcoming atmosphere.</p>
             </div>
         </div>
     </section>
@@ -495,6 +539,12 @@
                 <p>Savor exquisite dishes crafted by our chefs at our in-house dining venue.</p>
             </div>
         </div>
+    </section>
+
+    <section class="events" id="events">
+        <h2>Weddings, Meetings, and Weddings</h2>
+        <p>Host your special events at Hotel Gulati Suites, where elegance meets functionality. Our versatile venues are perfect for weddings, corporate meetings, and memorable celebrations, with personalized services to make every occasion unforgettable.</p>
+        <img src="images/PHOTO-2025-07-23-12-18-49 4.jpg" alt="Event Venue" class="events-image">
     </section>
 
     <section class="reviews" id="reviews">
