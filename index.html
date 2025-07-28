@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hotel Gulati Suites - Luxury Hotel in Washim, Maharashtra</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -14,9 +14,10 @@
 
         body {
             font-family: 'Roboto', sans-serif;
-            color: #333;
-            background-color: #f8f1e9;
-            line-height: 1.6;
+            color: #2B2520;
+            background-color: #F5E9DD;
+            line-height: 1.7;
+            scroll-behavior: smooth;
         }
 
         /* Header and Navigation */
@@ -24,82 +25,500 @@
             position: fixed;
             width: 100%;
             top: 0;
-            background: rgba(255, 255, 255, 0.95);
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            background: rgba(255, 255, 255, 0.97);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
             z-index: 1000;
+            transition: background 0.3s ease;
+        }
+
+        header.scrolled {
+            background: #FFFFFF;
         }
 
         nav {
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 1rem 2rem;
+            padding: 1.8rem 2rem;
         }
 
         .logo {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.8rem;
-            color: #8b4513;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.4rem;
+            color: #800000;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
         }
 
         .nav-links a {
-            margin-left: 2rem;
+            margin-left: 2.5rem;
             text-decoration: none;
-            color: #333;
+            color: #2B2520;
             font-weight: 400;
-            transition: color 0.3s;
+            font-size: 1.1rem;
+            position: relative;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -6px;
+            left: 0;
+            background-color: #800000;
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
         }
 
         .nav-links a:hover {
-            color: #d4a373;
+            color: #800000;
         }
 
         /* Hero Section */
         .hero {
             height: 100vh;
-            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('images/PHOTO-2025-07-23-12-18-49 8.jpg') center/cover no-repeat;
+            background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url('images/PHOTO-2025-07-23-12-18-49 8.jpg') center/cover no-repeat;
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
-            color: #fff;
+            color: #FFFFFF;
+            position: relative;
+        }
+
+        .hero-content {
+            animation: fadeIn 1.8s ease-in-out;
         }
 
         .hero-content h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: 3.5rem;
-            margin-bottom: 1rem;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 5rem;
+            margin-bottom: 1.8rem;
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.4);
         }
 
         .hero-content p {
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
-
+            font-size: 1.5rem;
+            font-weight: 300;
+            margin-bottom: 3rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
         }
+
+        .cta-button {
+            background: #800000;
+            color: #FFFFFF;
+            padding: 1.2rem 3rem;
+            text-decoration: none;
+            border-radius: 50px;
+            font-family: 'Roboto', sans-serif;
+            font-weight: 700;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            border: 2px solid #FFFFFF;
+        }
+
+        .cta-button:hover {
+            background: #660000;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        /* About Section */
+        .about {
+            max-width: 1400px;
+            margin: 7rem auto;
+            padding: 3rem 2rem;
+            text-align: center;
+            background: #FFFFFF;
+            border-radius: 20px;
+            box-shadow: 0 6px 25px rgba(0, 0, 0, 0.05);
+            position: relative;
+        }
+
+        .about::before {
+            content: '';
+            position: absolute;
+            top: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: #800000;
+        }
+
+        .about h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 3.2rem;
+            color: #800000;
+            margin-bottom: 1.8rem;
+        }
+
+        .about p {
+            max-width: 900px;
+            margin: 0 auto;
+            font-size: 1.3rem;
+            color: #4A4039;
+        }
+
+        /* Rooms Section */
+        .rooms {
+            background: linear-gradient(180deg, #FFFFFF 0%, #F5E9DD 100%);
+            padding: 7rem 2rem;
+        }
+
+        .rooms h2 {
+            text-align: center;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 3.2rem;
+            color: #800000;
+            margin-bottom: 4rem;
+            position: relative;
+        }
+
+        .rooms h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: #800000;
+        }
+
+        .room-grid {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 3rem;
+        }
+
+        .room-card {
+            background: #FFFFFF;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+        }
+
+        .room-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .room-card img {
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+
+        .room-card:hover img {
+            transform: scale(1.08);
+        }
+
+        .room-card h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2rem;
+            padding: 1.8rem;
+            color: #800000;
+        }
+
+        .room-card p {
+            padding: 0 1.8rem 1.8rem;
+            color: #4A4039;
+            font-size: 1.1rem;
+        }
+
+        /* Events Section */
+        .events {
+            max-width: 1400px;
+            margin: 7rem auto;
+            padding: 0 2rem;
+            text-align: center;
+        }
+
+        .events h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 3.2rem;
+            color: #800000;
+            margin-bottom: 2.5rem;
+            position: relative;
+        }
+
+        .events h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: #800000;
+        }
+
+        .events p {
+            max-width: 900px;
+            margin: 0 auto 3rem;
+            font-size: 1.3rem;
+            color: #4A4039;
+        }
+
+        .events-image {
+            max-width: 100%;
+            height: 500px;
+            object-fit: cover;
+            border-radius: 20px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            transition: transform 0.4s ease;
+            border: 2px solid #F5E9DD;
+        }
+
+        .events-image:hover {
+            transform: scale(1.03);
+        }
+
+        /* Gallery Section */
+        .gallery {
+            max-width: 1400px;
+            margin: 7rem auto;
+            padding: 0 2rem;
+            text-align: center;
+        }
+
+        .gallery h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 3.2rem;
+            color: #800000;
+            margin-bottom: 4rem;
+            position: relative;
+        }
+
+        .gallery h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: #800000;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 20px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.12);
+        }
+
+        .gallery-item::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.4);
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+
+        .gallery-item:hover::after {
+            opacity: 1;
+        }
+
+        /* Amenities Section */
+        .amenities {
+            max-width: 1400px;
+            margin: 7rem auto;
+            padding: 3rem 2rem;
+            text-align: center;
+            background: #FFFFFF;
+            border-radius: 20px;
+            box-shadow: 0 6px 25px rgba(0, 0, 0, 0.05);
+        }
+
+        .amenities h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 3.2rem;
+            color: #800000;
+            margin-bottom: 4rem;
+            position: relative;
+        }
+
+        .amenities h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: #800000;
+        }
+
+        .amenities-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .amenity-item {
+            background: #F5E9DD;
+            padding: 2.2rem;
+            border-radius: 15px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .amenity-item:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .amenity-item h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.6rem;
+            color: #800000;
+            margin-bottom: 1rem;
+        }
+
+        .amenity-item p {
+            color: #4A4039;
+            font-size: 1.1rem;
+        }
+
+        /* Reviews Section */
+        .reviews {
+            max-width: 1400px;
+            margin: 7rem auto;
+            padding: 0 2rem;
+            text-align: center;
+        }
+
+        .reviews h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 3.2rem;
+            color: #800000;
+            margin-bottom: 4rem;
+            position: relative;
+        }
+
+        .reviews h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: #800000;
+        }
+
+        .review-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .review-card {
+            background: #FFFFFF;
+            padding: 2.8rem;
+            border-radius: 20px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .review-card:hover {
+            transform: translateY(-8px);
+        }
+
+        .review-card .stars {
+            color: #800000;
+            margin-bottom: 1.5rem;
+            font-size: 1.3rem;
+        }
+
+        .review-card p {
+            font-style: italic;
+            color: #4A4039;
+            font-size: 1.2rem;
+        }
+
+        .review-card h4 {
+            margin-top: 1.5rem;
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 700;
+            color: #800000;
+            font-size: 1.2rem;
+        }
+
+        /* Map & Location Section */
         .map-location {
-            max-width: 1200px;
-            margin: 5rem auto;
+            max-width: 1400px;
+            margin: 7rem auto;
             padding: 0 2rem;
             text-align: center;
         }
 
         .map-location h2 {
-            font-family: 'Playfair Display', serif;
-            font-size: 2.5rem;
-            color: #8b4513;
-            margin-bottom: 2rem;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 3.2rem;
+            color: #800000;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .map-location h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: #800000;
         }
 
         .map-container {
             position: relative;
-            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            padding-bottom: 56.25%;
             height: 0;
             overflow: hidden;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            margin-bottom: 2rem;
+            border-radius: 20px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            margin-bottom: 2.5rem;
+            border: 2px solid #F5E9DD;
         }
 
         .map-container iframe {
@@ -111,310 +530,107 @@
             border: none;
         }
 
-        .cta-button {
-            background: #d4a373;
-            color: #fff;
-            padding: 0.8rem 2rem;
+        .location-details p {
+            font-size: 1.3rem;
+            color: #4A4039;
+            margin-bottom: 1rem;
+        }
+
+        .location-details a {
+            color: #800000;
             text-decoration: none;
-            border-radius: 5px;
             font-weight: 700;
-            transition: background 0.3s;
+            transition: color 0.3s ease;
         }
 
-        .cta-button:hover {
-            background: #b8860b;
-        }
-
-        /* About Section */
-        .about {
-            max-width: 1200px;
-            margin: 5rem auto;
-            padding: 0 2rem;
-            text-align: center;
-        }
-
-        .about h2 {
-            font-family: 'Playfair Display', serif;
-            font-size: 2.5rem;
-            color: #8b4513;
-            margin-bottom: 1rem;
-        }
-
-        .about p {
-            max-width: 800px;
-            margin: 0 auto;
-            font-size: 1.1rem;
-            color: #555;
-        }
-
-        /* Rooms Section */
-        .rooms {
-            background: #fff;
-            padding: 5rem 2rem;
-        }
-
-        .rooms h2 {
-            text-align: center;
-            font-family: 'Playfair Display', serif;
-            font-size: 2.5rem;
-            color: #8b4513;
-            margin-bottom: 3rem;
-        }
-
-        .room-grid {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-
-        .room-card {
-            background: #f8f1e9;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s;
-        }
-
-        .room-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .room-card img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-        }
-
-        .room-card h3 {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.5rem;
-            padding: 1rem;
-            color: #8b4513;
-        }
-
-        .room-card p {
-            padding: 0 1rem 1rem;
-            color: #555;
-        }
-
-
-        /* Wedding, Meeting and Weddings Section */
-        .events {
-            max-width: 1200px;
-            margin: 5rem auto;
-            padding: 0 2rem;
-            text-align: center;
-        }
-
-        .events h2 {
-            font-family: 'Playfair Display', serif;
-            font-size: 2.5rem;
-            color: #8b4513;
-            margin-bottom: 2rem;
-        }
-
-        .events p {
-            max-width: 800px;
-            margin: 0 auto 2rem;
-            font-size: 1.1rem;
-            color: #555;
-        }
-
-        .events-image {
-            max-width: 100%;
-            height: 400px;
-            object-fit: cover;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease;
-        }
-
-        .events-image:hover {
-            transform: scale(1.05);
-        }
-
-        /* Gallery Section */
-        .gallery {
-            max-width: 1200px;
-            margin: 5rem auto;
-            padding: 0 2rem;
-            text-align: center;
-        }
-
-        .gallery h2 {
-            font-family: 'Playfair Display', serif;
-            font-size: 2.5rem;
-            color: #8b4513;
-            margin-bottom: 3rem;
-        }
-
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.5rem;
-        }
-
-        .gallery-item {
-            position: relative;
-            overflow: hidden;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-        }
-
-        .gallery-item img {
-            width: 100%;
-            height: 250px;
-            object-fit: cover;
-            transition: transform 0.3s ease;
-        }
-
-        .gallery-item:hover img {
-            transform: scale(1.05);
-        }
-
-        .gallery-item::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.3);
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-
-        .gallery-item:hover::after {
-            opacity: 1;
-        }
-
-        /* Amenities Section */
-        .amenities {
-            max-width: 1200px;
-            margin: 5rem auto;
-            padding: 0 2rem;
-            text-align: center;
-        }
-
-        .amenities h2 {
-            font-family: 'Playfair Display', serif;
-            font-size: 2.5rem;
-            color: #8b4513;
-            margin-bottom: 3rem;
-        }
-
-        .amenities-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 2rem;
-        }
-
-        .amenity-item {
-            background: #fff;
-            padding: 1.5rem;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s;
-        }
-
-        .amenity-item:hover {
-            transform: translateY(-5px);
-        }
-
-        .amenity-item h3 {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.2rem;
-            color: #8b4513;
-            margin-bottom: 0.5rem;
-        }
-
-        .amenity-item p {
-            color: #555;
-            font-size: 0.9rem;
-        }
-
-        /* Reviews Section */
-        .reviews {
-            max-width: 1200px;
-            margin: 5rem auto;
-            padding: 0 2rem;
-            text-align: center;
-        }
-
-        .reviews h2 {
-            font-family: 'Playfair Display', serif;
-            font-size: 2.5rem;
-            color: #8b4513;
-            margin-bottom: 3rem;
-        }
-
-        .review-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-        }
-
-        .review-card {
-            background: #fff;
-            padding: 2rem;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-        }
-
-        .review-card .stars {
-            color: #d4a373;
-            margin-bottom: 1rem;
-        }
-
-        .review-card p {
-            font-style: italic;
-            color: #555;
-        }
-
-        .review-card h4 {
-            margin-top: 1rem;
-            font-weight: 700;
-            color: #8b4513;
+        .location-details a:hover {
+            color: #660000;
         }
 
         /* Contact Section */
         .contact {
-            background: #d4a373;
-            color: #fff;
-            padding: 5rem 2rem;
+            background: linear-gradient(135deg, #800000 0%, #660000 100%);
+            color: #FFFFFF;
+            padding: 7rem 2rem;
             text-align: center;
         }
 
         .contact h2 {
-            font-family: 'Playfair Display', serif;
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 3.2rem;
+            margin-bottom: 2rem;
+            position: relative;
+        }
+
+        .contact h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: #FFFFFF;
         }
 
         .contact p {
-            font-size: 1.1rem;
-            margin-bottom: 0.5rem;
+            font-size: 1.3rem;
+            margin-bottom: 1.2rem;
+        }
+
+        .contact a {
+            color: #F5E9DD;
+            text-decoration: none;
+            font-weight: 700;
+            transition: color 0.3s ease;
+        }
+
+        .contact a:hover {
+            color: #FFFFFF;
         }
 
         /* Footer */
         footer {
-            background: #333;
-            color: #fff;
+            background: #2B2520;
+            color: #F5E9DD;
             text-align: center;
-            padding: 2rem;
-            font-size: 0.9rem;
+            padding: 3rem;
+            font-size: 1.1rem;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         /* Responsive Design */
+        @media (max-width: 1024px) {
+            .hero-content h1 {
+                font-size: 4rem;
+            }
+
+            .hero-content p {
+                font-size: 1.3rem;
+            }
+
+            .room-grid, .gallery-grid, .amenities-grid, .review-grid {
+                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            }
+        }
+
         @media (max-width: 768px) {
             .hero-content h1 {
-                font-size: 2.5rem;
+                font-size: 3rem;
+            }
+
+            .hero-content p {
+                font-size: 1.2rem;
             }
 
             .nav-links a {
-                margin-left: 1rem;
+                margin-left: 1.2rem;
+                font-size: 1rem;
             }
 
             .room-grid, .gallery-grid, .amenities-grid, .review-grid {
@@ -422,10 +638,35 @@
             }
 
             .map-container {
-                padding-bottom: 75%; /* Adjust aspect ratio for smaller screens */
+                padding-bottom: 75%;
             }
+
             .events-image {
-                height: 250px;
+                height: 350px;
+            }
+
+            .about h2, .rooms h2, .events h2, .gallery h2, .amenities h2, .reviews h2, .map-location h2, .contact h2 {
+                font-size: 2.8rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .logo {
+                font-size: 1.8rem;
+            }
+
+            .nav-links a {
+                margin-left: 0.8rem;
+                font-size: 0.9rem;
+            }
+
+            .cta-button {
+                padding: 1rem 2rem;
+                font-size: 1.1rem;
             }
         }
     </style>
@@ -438,9 +679,11 @@
                 <a href="#home">Home</a>
                 <a href="#about">About</a>
                 <a href="#rooms">Rooms</a>
+                <a href="#events">Events</a>
                 <a href="#gallery">Gallery</a>
                 <a href="#amenities">Amenities</a>
                 <a href="#reviews">Reviews</a>
+                <a href="#map">Map</a>
                 <a href="#contact">Contact</a>
             </div>
         </nav>
@@ -486,7 +729,7 @@
     </section>
 
     <section class="events" id="events">
-        <h2>Weddings, Meetings, and Weddings</h2>
+        <h2>Weddings, Meetings, and Events</h2>
         <p>Host your special events at Hotel Gulati Suites, where elegance meets functionality. Our versatile venues are perfect for weddings, corporate meetings, and memorable celebrations, with personalized services to make every occasion unforgettable.</p>
         <img src="images/PHOTO-2025-07-23-12-18-49 4.jpg" alt="Event Venue" class="events-image">
     </section>
@@ -547,14 +790,13 @@
         </div>
     </section>
 
-
     <section class="reviews" id="reviews">
         <h2>What Our Guests Say</h2>
         <div class="review-grid">
             <div class="review-card">
                 <div class="stars">★★★★★</div>
                 <p>"An absolutely delightful stay! The staff was incredibly welcoming, and the rooms were spotless and luxurious."</p>
-                <h4>– Priya Sharma</h4>
+                <h4>– John Ryan</h4>
             </div>
             <div class="review-card">
                 <div class="stars">★★★★★</div>
@@ -588,15 +830,25 @@
     <section class="contact" id="contact">
         <h2>Contact Us</h2>
         <p>Behind Bus Stand, Civil Line, Washim, Maharashtra, 444505, India</p>
-        <p>Phone: +91 8055040400</p>
-        <p>       +91 8055040400</p>
-        <p>Email: gulatisuites@gmail.com</p>
-        <link>Website: www.hotelgulatisuites.in</link>
-
+        <p>Phone: <a href="tel:+918055040400">+91 8055040400, +91 7875040400</a></p>
+        <p>Email: <a href="mailto:gulatisuites@gmail.com">gulatisuites@gmail.com</a></p>
+        <p>Website: <a href="http://www.hotelgulatisuites.in" target="_blank">www.hotelgulatisuites.in</a></p>
     </section>
 
     <footer>
         <p>© 2025 Gulati Suites. All rights reserved.</p>
     </footer>
+
+    <script>
+        // Add scrolled class to header for styling when scrolling
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+    </script>
 </body>
 </html>
